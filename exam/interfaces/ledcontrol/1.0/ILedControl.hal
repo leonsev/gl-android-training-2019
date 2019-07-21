@@ -1,0 +1,35 @@
+/*
+ * (License Notice)
+ */
+
+package vendor.gl.ledcontrol@1.0;
+
+
+/**
+ * ILedControl is an interface that provides interface to LED control HAL
+ */
+interface ILedControl {
+
+    /**
+     * LedControl initialization
+     *
+     * @return result 0 if successful, nonzero otherwise.
+     */
+     initLedControl() generates (uint32_t result);
+
+
+    /**
+     * LedControl setLedState
+     *
+     * @return result 0 if successful, nonzero otherwise.
+     */
+     setLedState(LedID id, LedStatus status) generates (uint32_t result);
+
+
+    /**
+     * LedControl terminate
+     *
+     * @return result 0 if successful, nonzero otherwise.
+     */
+     terminateLedState() generates (uint32_t result);
+};
